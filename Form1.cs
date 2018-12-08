@@ -56,6 +56,16 @@ namespace DesktopApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Student' table. You can move, or remove it, as needed.
+            this.studentTableAdapter.Fill(this.dataSet1.Student);
+
+        }
+
+        private void studentBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.studentBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSet1);
 
         }
     }
